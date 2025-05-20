@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="人生解題，解你不懂的題。考古題不懂快進來!"/>
+        <meta name="author" content="臻臻"/>
+        <meta name="keywords" content="會考,學測,考古題,解題"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>我的第一個網頁</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='999.css') }}">
+    </head>
+    <body>
+
+      <script src="{{ url_for('static', filename='1010101.js') }}"></script>
+    
+      <button id="floating-button" onclick="handle_click(this)">𖤂</button>
+
+        <!--基本標籤-->
+        <h1 style="font-size: 50pt;">人生解題｜會考與學測考古題解析平台</h1>
+        <section style="padding:20px;background-color:AliceBlue;border:1px">
+          大家好!這是一個提供歷屆會考以及學測試題解析的網站，歡迎大家在做完題目之後，到這個網站進行檢討。
+        </section>
+
+         <!--輸入標籤-->
+         <form action="/search" method="get">
+         <input type="text" name="keyword">
+         <button type="submit">搜尋</button>
+         </form>
+
+         <main class="container">
+          <h2>國中會考解題</h2>
+          <div class="exam-row">
+            <div class="exam-item"><b>113</b></div>
+            <div class="exam-item"><b>112</b></div>
+            <div class="exam-item"><b>111</b></div>
+            <div class="exam-item"><b>110</b></div>
+            <div class="exam-item"><b>109</b></div>
+          </div>
+          <hr/>
+          <h2>高中學測解題</h2>
+          <div class="exam-row">
+            <div class="exam-item"><b>114</b></div>
+            <div class="exam-item"><b>113</b></div>
+            <div class="exam-item"><b>112</b></div>
+            <div class="exam-item"><b>111</b></div>
+            <div class="exam-item"><b>110</b></div>
+          </div>
+        </main>
+        
+        <!--連結、圖片-->
+        <a class = "practice"; href="888888888888.html">開始練習吧</a>
+        <div style="width: 400px;">
+          <p>練習完，送給自己一隻金豬</p>
+          <img src="{{ url_for('static', filename='moneypig.png') }}" alt="金豬圖片" width="100">
+        </div>
+        
+        <!--影片-->
+        <br/>
+        <p>大考相關新聞</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QfGSGdpXyK8?si=v0ut-6FqeZqbRvib" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p style="text-align: center;">114年會考報名人數17萬5247人 創歷年新低</p>
+        <!--列表-->
+        <br/>
+       
+        <div>
+            <ul>
+                <li>IG</li>
+                <li>Facebook</li>
+                <li>方格子</li>
+                <li>巴哈姆特</li>
+            </ul>
+    
+            <table width="500" border=1>
+                <tr>
+                  <td colspan="4" align="center" style="color:rgb(253, 3, 3); font-size: 30pt;">5/17</td>
+                  <td colspan="3" align="center" style="color:red; font-size: 30pt;">5/18</td>
+                </tr>
+                <tr>
+                  <td>社會</td>
+                  <td>數學</td>
+                  <td>國文</td>
+                  <td>寫作</td>
+                  <td>自然</td>
+                  <td>英文(閱讀)</td>
+                  <td>英文(聽力)</td>
+                </tr>
+              </table>
+        </div>          
+
+       <br/>
+       <form action="/report" method="post">
+       <textarea name="message" placeholder="回報問題" rows="4" cols="50"></textarea><br>
+       <button type="submit">送出問題</button>
+       </form>
+       {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      alert("{{ messages[0] }}");
+    </script>
+  {% endif %}
+{% endwith %}
+
+    </body>
+</html>

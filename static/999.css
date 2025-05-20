@@ -1,0 +1,38 @@
+h2 p:hover{
+    background-color: rgb(246, 186, 107);
+}
+.exam-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 讓 box 之間有間距 */
+    margin-bottom: 10px;
+  }
+  
+  .exam-item {
+    border: 1px solid rgb(202, 201, 201);
+    padding: 100px;
+    width: 50px;
+    white-space: nowrap; /* ⭐ 禁止文字自動換行 */
+    overflow: hidden;     /* （可選）隱藏超出的內容 */
+    text-overflow: ellipsis; /* （可選）顯示省略號 */
+
+  }
+
+  #floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(234, 120, 120);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
